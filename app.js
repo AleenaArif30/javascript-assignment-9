@@ -93,3 +93,7 @@ function inches(distance) {
     return distance * 39370
 }
 document.write("The distance between two cities in km is " + distance + "<br> " + "distance in meter :" + meter(distance) + "<br> " + "distance in meter :" + "<br> " + "distance in centimeter :" + centimeter(distance) + "<br> " + "distance in feet :" + feet(distance) + "<br> " + "distance in inches :" + inches(distance))
+
+
+var num = 1222;
+alert(num)
