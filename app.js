@@ -94,6 +94,70 @@ function inches(distance) {
 }
 document.write("The distance between two cities in km is " + distance + "<br> " + "distance in meter :" + meter(distance) + "<br> " + "distance in meter :" + "<br> " + "distance in centimeter :" + centimeter(distance) + "<br> " + "distance in feet :" + feet(distance) + "<br> " + "distance in inches :" + inches(distance))
 
+var string = prompt("enter a string for delete vowel")
+function deletevowel(string) {
+    var vowel = "aeiouAEIOU";
+    var result = ""
+    for (i = 0; i < string.length; i++) {
+        if (vowel.indexOf(string[i]) === -1) {
+            result += string[i]
 
-var num = 1222;
-alert(num)
+        }
+    }
+    return result
+}
+alert(deletevowel(string))
+
+
+
+var text = prompt("enter any text to count pair of vowel")
+function countVowelPairs(text) {
+    var count = 0;
+    var i = 0;
+    while (i < text.length - 1) {
+        var char1 = text[i].toLowerCase()
+        var char2 = text[i + 1].toLowerCase()
+        var vowelPairs = []
+
+        switch (true) {
+            case (char1 === "a" && (char2 === "a" || char2 === "e" || char2 === "i" || char2 === "o" || char2 === "u")):
+            case (char1 === "e" && (char2 === "a" || char2 === "e" || char2 === "i" || char2 === "o" || char2 === "u")):
+            case (char1 === "i" && (char2 === "a" || char2 === "e" || char2 === "i" || char2 === "o" || char2 === "u")):
+            case (char1 === "o" && (char2 === "a" || char2 === "e" || char2 === "i" || char2 === "o" || char2 === "u")):
+            case (char1 === "u" && (char2 === "a" || char2 === "e" || char2 === "i" || char2 === "o" || char2 === "u")):
+                count++
+                vowelPairs.push(char1 + char2)
+                console.log(vowelPairs)
+                break
+        }
+        i++
+    }
+    return count;
+}
+alert(countVowelPairs(text))
+
+
+var overtime = +prompt("how many hours do you work in office today")
+
+function overtimepay(overtime) {
+    var workinghours = 40
+    var overpay = overtime - workinghours
+    var pay = overpay * 12
+    return pay
+}
+
+alert(overtimepay(overtime))
+
+
+var amount = +prompt("enter your amount")
+function currencynotes(amount){
+var hundred = Math.floor(amount/100)
+var remainamount = amount%100
+var fifty = Math.floor(remainamount/50)
+var remainamount = remainamount%50
+var ten = Math.floor(remainamount/10)
+
+return [hundred,fifty,ten]
+}
+var notes = currencynotes(amount)
+document.write("your amount is"  + amount + "<br>" + "The notes of hundred = " + notes[0] + "<br>" + "The notes of fifty = " + notes[1]  + "<br>" + "The notes of ten = " + notes[2])
